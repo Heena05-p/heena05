@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Food Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: orangered; /* dark brown background */
+      color: #fff;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+    }
+    header h2 {
+      font-size: 50px;
+      margin:10px 0;
+      color: #ffb000;
+    }
+    header p {
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .menu-item {
+      background: #5c3016;
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+    .menu-item img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid #ffb000;
+      object-fit: cover;
+    }
+    .menu-item h3 {
+      margin: 15px 0 5px;
+      font-size: 20px;
+      color: #ffb000;
+    }
+    .menu-item p {
+      font-size: 14px;
+      color: #ddd;
+      margin: 5px 0;
+    }
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffb000;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: #ffb000;
+      padding: 15px;
+      margin-top: 40px;
+      color: #000;
+      font-size: 14px;
+    }
+    footer a {
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>SPECIAL FOOD</h2>
+    <p>Please choose what food to order and want. We will serve you wholeheartedly.</p>
+  </header>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="burger.webp" alt="Burger">
+      <h3>Burger</h3>
+      <p>A burger is a tasty sandwich made with a grilled patty, fresh veggies, and sauces packed between soft buns. 🍔
+.</p>
+      <div class="price">₹45–₹70</div>
+    </div>
+    <div class="menu-item">
+      <img src="pizza.webp" alt="Pizza">
+      <h3>Pizza</h3>
+      <p>A pizza is a delicious flatbread topped with sauce, cheese, and flavorful toppings baked to perfection. 🍕
+.</p>
+      <div class="price">₹100 – ₹300</div>
+    </div>
+    <div class="menu-item">
+      <img src="pasta.jpg" alt="Pasta">
+      <h3>Pasta</h3>
+      <p>Pasta is a classic Italian dish made from wheat flour, cooked in various shapes and served with rich sauces. 🍝
+.</p>
+      <div class="price">₹170-₹200</div>
+    </div>
+    <div class="menu-item">
+      <img src="hotdog.jpg" alt="Hotdog">
+      <h3>Hotdog</h3>
+      <p>A hot dog is a soft bun filled with a juicy sausage, often topped with sauces and veggies. 🌭
+.</p>
+      <div class="price">₹80-₹110</div>
+    </div>
+    <div class="menu-item">
+      <img src="chicken 2.webp" alt="Chicken">
+      <h3>Chicken</h3>
+      <p>Chicken is a versatile and protein-rich meat enjoyed worldwide, cooked in countless delicious ways. 🍗
+.</p>
+      <div class="price">₹250-₹400</div>
+    </div>
+    <div class="menu-item">
+      <img src="sandwich.webp" alt="Sandwich">
+      <h3>Sandwich</h3>
+      <p>A sandwich is a convenient and tasty meal made by placing fillings like veggies, meat, or cheese between slices of bread. 🥪
+.</p>
+      <div class="price">₹180-₹210</div>
+    </div>
+  </div>
+
+  <footer>
+    📞 For Info and Order: <a href="tel:7019651787">7019651787</a> <br>
+    📧 For Online Order: <a href="http//classyresto.com">http//classyresto.com</a>
+
+  </footer>
+</body>
+</html>

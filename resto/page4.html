@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet Dishes Menu</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff8f0;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    color: #ff6600;
+    margin-bottom: 25px;
+  }
+
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .dish {
+    border: 2px solid #ff6600;
+    border-radius: 10px;
+    padding: 10px;
+    width: 180px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .dish:hover {
+    transform: scale(1.05);
+  }
+
+  .dish img {
+    width: 100%;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .dish.selected {
+    background-color: orange;
+    color: white;
+  }
+
+  /* Place Order Button */
+  #orderBtn {
+    display: none;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+  }
+
+  #orderBtn:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+
+<h1>🍰 Sweet Dishes Menu 🍨</h1>
+
+<div class="menu">
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1607083206967-8f3e0b6f25cf" alt="Gulab Jamun">
+    <p>Gulab Jamun - ₹90</p>
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="rasagulla.webp" alt="Rasgulla">
+    <p>Rasgulla - ₹80</p>
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1601049911893-2078e3b38a26" alt="Kheer">
+    <p>Kheer - ₹70</p>
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1617196034803-453a2c2d327d" alt="Jalebi">
+    <p>Jalebi - ₹60</p>
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1651896044434-63d2fa2cc062" alt="Ladoo">
+    <p>Ladoo - ₹50</p>
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1590080875837-9a08c9d9d7a2" alt="Barfi">
+    <p>Barfi - ₹100</p>
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1609327021891-bc3d06b1b520" alt="Halwa">
+    <p>Halwa - ₹80</p>
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1617196034803-453a2c2d327d" alt="Rabri">
+    <p>Rabdi - ₹120</p>
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1607082349566-18744f6c5d99" alt="Ice Cream">
+    <p>Ice Cream - ₹150</p>
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Chocolate Cake">
+    <p>Chocolate Cake - ₹180</p>
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1565958011705-44e211f7d9b1" alt="Cheesecake">
+    <p>Cheesecake - ₹200</p>
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1611066525803-00e21d980b9a" alt="Brownie">
+    <p>Brownie - ₹130</p>
+  </div>
+</div>
+
+<button id="orderBtn" onclick="placeOrder()">Place Order</button>
+
+<script>
+  function toggleSelect(element) {
+    element.classList.toggle('selected');
+    const selectedDishes = document.querySelectorAll('.dish.selected');
+    const orderBtn = document.getElementById('orderBtn');
+
+    // Show or hide the Place Order button
+    if (selectedDishes.length > 0) {
+      orderBtn.style.display = 'inline-block';
+    } else {
+      orderBtn.style.display = 'none';
+    }
+  }
+
+  function placeOrder() {
+    const selected = document.querySelectorAll('.dish.selected p');
+    const items = Array.from(selected).map(item => item.innerText).join('\n');
+    alert("You have ordered:\n\n" + items);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <style>
+        body {
+            background-color: orangered;
+        }
+
+        .menu {
+            text-align: center;
+            text-justify: auto;
+            font-size: 40px;
+            color: aliceblue;
+
+        }
+
+        .container {
+            margin-left: 150px;
+            display: grid;
+            grid-gap: 30px;
+            width: 80vw;
+            height: 100vh;
+        }
+
+        .box {
+            width: 250px;
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0, 2s ease-in-out;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            align-items: center;
+        }
+
+        .rectangle {
+            width: 600px;
+            height: 150px;
+            background-color:orangered;
+           
+            border-radius: 8px;
+            text-align: center;
+            line-height: 50px;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            color: black;
+            margin-top: -700px;
+            margin-left: 500px;
+        }
+        .rectangle1 {
+            width: 600px;
+            height: 150px;
+            background-color: orangered;
+            text-align: center;
+            line-height: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            color: black;
+           margin-top:140px;
+           margin-left: 500px;
+
+
+        }
+        .rectangle2{
+           width: 600px;
+            height: 150px;
+            background-color:orangered;
+           
+            text-align: center;
+            line-height: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            color: black;  
+            margin-top:110px;
+            margin-left:500px;
+        }
+        .rectangle3{
+           width: 600px;
+            height: 150px;
+            background-color:orangered;
+            text-align: center;
+            line-height: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            color: black;  
+            margin-top:135px;
+            margin-left:500px; 
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="menu">MENU</h1>
+    <p style="text-align: center;color:orange;padding: 0%;margin-top: 0%;font-size: 20px;">Crafted with taste served
+        with care:</p><br><br>
+    <div class="container">
+        <div class="box" onclick="openSmallpage('page1.html')">
+            <img src="indian.jpg">
+        </div>
+        <div class="box" onclick="openSmallpage1('page2.html')">
+            <img src="nonveg.jpg">
+        </div>
+        <div class="box" onclick="openSmallpage2('page3.html')">
+            <img src="fastfood.jpg">
+        </div>
+        <div class="box" onclick="openSmallpage3('page4.html')">
+            <img src="gulab.jpg">
+        </div>
+    </div>
+    <script>
+        function openSmallpage() {
+            window.open("page1.html", "popup", "width=400,height=300");
+        }
+         function openSmallpage1() {
+            window.open("page2.html", "popup", "width=400,height=300");
+        }
+         function openSmallpage2() {
+            window.open("page3.html", "popup", "width=400,height=300");
+        }
+         function openSmallpage3() {
+            window.open("page4.html", "popup", "width=400,height=300");
+        }
+        
+    </script>
+    <div class="rectangle">INDIAN THALI:<br>Experience India on a plate — a journey of taste, tradition, and
+        togetherness.</div>
+    <div class="rectangle1">NON VEG:<br>Bold, juicy, and unforgettable — that’s how we do non-veg.</div>
+    <div class="rectangle2">FAST FOOD:<br>Quick eats, great vibes — always fresh, always tasty.</div>
+    <div class="rectangle3">SWEET:<br>A bite of sweetness to end your meal on a perfect note!.</div>
+</body>
+
+</html>

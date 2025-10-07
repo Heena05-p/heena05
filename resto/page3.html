@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fast Food Menu</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    color: #ff6600;
+    margin-bottom: 20px;
+  }
+
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .dish {
+    border: 2px solid #ff6600;
+    border-radius: 10px;
+    padding: 10px;
+    width: 180px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .dish:hover {
+    transform: scale(1.05);
+  }
+
+  .dish img {
+    width: 100%;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .dish.selected {
+    background-color: orange;
+    color: white;
+  }
+  #orderBtn {
+    display: none;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+  }
+
+  #orderBtn:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+
+<h1>🍔 Fast Food Menu 🍟</h1>
+
+<div class="menu">
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Burger">
+    <p>Burger - ₹120</p>
+    <input type="checkbox">
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1601924571440-6810a1a2e864" alt="Pizza">
+    <p>Pizza - ₹250</p>
+    <input type="checkbox">
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1590080875837-9a08c9d9d7a2" alt="Pasta">
+    <p>Pasta - ₹180</p>
+    <input type="checkbox">
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1565958011705-44e211f7d9b1" alt="Sandwich">
+    <p>Sandwich - ₹90</p>
+    <input type="checkbox">
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Fries">
+    <p>French Fries - ₹80</p>
+    <input type="checkbox">
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1590080875837-9a08c9d9d7a2" alt="Hot Dog">
+    <p>Hot Dog - ₹110</p>
+    <input type="checkbox">
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1606755962773-0c8fdaa635d8" alt="Wrap">
+    <p>Chicken Wrap - ₹150</p>
+    <input type="checkbox">
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1605478571809-163a5a0b2ab4" alt="Tacos">
+    <p>Tacos - ₹130</p>
+    <input type="checkbox">
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f" alt="Noodles">
+    <p>Noodles - ₹140</p>
+    <input type="checkbox">
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1626089972381-3edc72a6a6c7" alt="Momoz">
+    <p>Momoz - ₹100</p>
+    <input type="checkbox">
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Fried Chicken">
+    <p>Fried Chicken - ₹200</p>
+    <input type="checkbox">
+  </div>
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="https://images.unsplash.com/photo-1606312616305-9a8b4af2db0c" alt="Garlic Bread">
+    <p>Garlic Bread - ₹70</p>
+    <input type="checkbox">
+  </div>
+</div>
+
+<script>
+  function toggleSelect(element) {
+    element.classList.toggle('selected');
+  }
+  
+</script>
+<button id="orderBtn" onclick="placeOrder()">Place Order</button>
+
+<script>
+  function toggleSelect(element) {
+    element.classList.toggle('selected');
+    const selectedDishes = document.querySelectorAll('.dish.selected');
+    const orderBtn = document.getElementById('orderBtn');
+
+    // Show or hide the Place Order button
+    if (selectedDishes.length > 0) {
+      orderBtn.style.display = 'inline-block';
+    } else {
+      orderBtn.style.display = 'none';
+    }
+  }
+
+  function placeOrder() {
+    const selected = document.querySelectorAll('.dish.selected p');
+    const items = Array.from(selected).map(item => item.innerText).join('\n');
+    alert("You have ordered:\n\n" + items);
+  }
+</script>
+</body>
+</html>

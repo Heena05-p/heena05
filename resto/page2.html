@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Non-Veg Menu</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    height:300px;
+  }
+
+  h1 {
+    color: #ff6600;
+    margin-bottom: 20px;
+  }
+
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .dish {
+    border: 2px solid #ff6600;
+    border-radius: 10px;
+    padding: 10px;
+    width: 180px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .dish:hover {
+    transform: scale(1.05);
+  }
+
+  .dish img {
+    width: 100%;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .dish.selected {
+    background-color: orange;
+    color: white;
+  }
+  #orderBtn {
+    display: none;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+  }
+
+  #orderBtn:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+
+<h1>🍗 Non-Veg Special Menu 🍛</h1>
+
+<div class="menu">
+
+  <div class="dish" onclick="toggleSelect(this)">
+    <img src="biryani.webp" alt="Chicken Biryani">
+    <h3>Chicken Biryani</h3>
+    <p>₹180</p>
+    <input type="checkbox">
+  </div>
+
+  <div class="dish"onclick="toggleSelect(this)">
+    <img src="butter chicken.jpg" alt="Butter Chicken">
+    <h3>Butter Chicken</h3>
+    <p>₹220</p>
+    <input type="checkbox">
+  </div>
+
+  <div class="dish"onclick="toggleSelect(this)">
+    <img src="mutton curry.jpg" alt="Mutton Curry">
+    <h3>Mutton Curry</h3>
+    <p>₹250</p>
+    <input type="checkbox">
+  </div>
+
+  <div class="dish"onclick="toggleSelect(this)">
+    <img src="fish.jpg" alt="Fish Fry">
+    <h3>Fish Fry</h3>
+    <p>₹190</p>
+    <input type="checkbox">
+  </div>
+
+  <div class="dish"onclick="toggleSelect(this)">
+    <img src="tandoori.jpg" alt="Tandoori Chicken">
+    <h3>Tandoori Chicken</h3>
+    <p>₹210</p>
+    <input type="checkbox">
+  </div>
+
+  <div class="dish"onclick="toggleSelect(this)">
+    <img src="tika.jpg" alt="Chicken Tikka">
+    <h3>Chicken Tikka</h3>
+    <p>₹180</p>
+    <input type="checkbox">
+  </div>
+
+  <div class="dish"onclick="toggleSelect(this)">
+    <img src="egg.jpg" alt="Egg Curry">
+    <h3>Egg Curry</h3>
+    <p>₹120</p>
+    <input type="checkbox">
+  </div>
+
+  <div class="dish"onclick="toggleSelect(this)">
+    <img src="kabab.jpg" alt="Chicken Kebab">
+    <h3>Chicken Keb
+</h3>
+</div>
+</div>
+<button id="orderBtn" onclick="placeOrder()">Place Order</button>
+
+<script>
+  function toggleSelect(element) {
+    element.classList.toggle('selected');
+    const selectedDishes = document.querySelectorAll('.dish.selected');
+    const orderBtn = document.getElementById('orderBtn');
+
+    // Show or hide the Place Order button
+    if (selectedDishes.length > 0) {
+      orderBtn.style.display = 'inline-block';
+    } else {
+      orderBtn.style.display = 'none';
+    }
+  }
+
+  function placeOrder() {
+    const selected = document.querySelectorAll('.dish.selected p');
+    const items = Array.from(selected).map(item => item.innerText).join('\n');
+    alert("You have ordered:\n\n" + items);
+  }
+</script>
+</body>
+</html>
